@@ -5,9 +5,16 @@ import ShareIcon from '@mui/icons-material/Share';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SettingsIcon from '@mui/icons-material/Settings';
 import HelpIcon from '@mui/icons-material/Help';
-import { Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Paper, Typography, colors } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import IconButton from '@mui/material/IconButton';
+
+// import {  Menu, MenuItem, useProSidebar } from "react-pro-sidebar";
+import { Box, Drawer, Hidden, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Paper, Typography, colors } from '@mui/material';
 import { images } from "./assets";
 import Animate from "./Animate";
+import React, { useState } from 'react';
+import useMediaQuery from '@mui/material/useMediaQuery';
+
 
 const menus = [
       {
@@ -49,6 +56,12 @@ const menus = [
 
 const Sidebar = ({ sidebarWidth }) => {
       const activeState = "Home";
+
+      const [mobileOpen, setMobileOpen] = React.useState(false);
+
+      const handleDrawerToggle = () => {
+            setMobileOpen(!mobileOpen);
+      };
 
       const MenuItem = (props) => {
             return (
@@ -128,6 +141,8 @@ const Sidebar = ({ sidebarWidth }) => {
       );
 
       return (
+            <div>
+            <Hidden >
             <Box
                   component="nav"
                   sx={{
@@ -136,7 +151,7 @@ const Sidebar = ({ sidebarWidth }) => {
                   }}
             >
                   {/* large screen */}
-                  <Drawer
+                  <Drawer 
                         variant="permanent"
                         sx={{
                               display: { xs: "none", sm: "none", md: "block" },
@@ -155,7 +170,39 @@ const Sidebar = ({ sidebarWidth }) => {
                         {drawer}
                   </Drawer>
                   {/* large screen */}
+
+                  {/* Mobile view */}
+                  <Hidden lgUp implementation="css">
+                        <IconButton
+                              color="inherit"
+                              aria-label="open drawer"
+                              edge="start"
+                              onClick={handleDrawerToggle}
+                        >
+                        <MenuIcon />
+                        </IconButton>
+                        <Drawer
+                              variant="temporary"
+                              open={mobileOpen}
+                              onClose={handleDrawerToggle}
+                        >
+                              {/* menu group */}
+                                    <List>
+                                          {menus.map((item, index) => (
+                                                <MenuItem
+                                                      key={index}
+                                                      item={item}
+                                                      isActive={item.state === activeState}
+                                                />
+                                                ))}
+                                    </List>
+                              {/* menu group */}
+                        </Drawer>
+                   </Hidden>
+                  
             </Box>
+            </Hidden>
+            </div>
       );
 };
 
