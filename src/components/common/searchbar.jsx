@@ -9,9 +9,6 @@ import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 
-const appBarStyle = {
-      backgroundColor: 'rgba(1, 1, 122, 0.5)',
-};
 
 const Search = styled('div')(({ theme }) => ({
       position: 'relative',
@@ -58,7 +55,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function SearchAppBar() {
       return (
             <Box sx={{ flexGrow: 1 }}>
-                  <AppBar position="static" style={appBarStyle}>
+                  <AppBar position="static" variant="contained" borderRadius = 'theme.shape.borderRadius'>
                         <Toolbar>
                               <IconButton
                                     size="large"
@@ -67,7 +64,7 @@ export default function SearchAppBar() {
                                     aria-label="open drawer"
                                     sx={{ mr: 2 }}
                               >
-                                    <MenuIcon />
+                                    {/* <MenuIcon /> */}
                               </IconButton>
                               <Typography
                                     variant="h6"
@@ -75,7 +72,7 @@ export default function SearchAppBar() {
                                     component="div"
                                     sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                               >
-                                    MUI
+                                    ABC FIRM
                               </Typography>
                               <Search>
                                     <SearchIconWrapper>

@@ -23,17 +23,11 @@ const summaryData = [
       }
 ];
 
-const align_right = () => {
-      const containerStyle = {
-            textAlign: 'right',
-      };
-}
-
 const SummaryGrid = () => {
       return (
             <Grid container spacing={3}>
                   {summaryData.map((summary, index) => (
-                        <Grid key={index} item xs={12} lg={3} container justify="flex-end" alignItems="flex-start">
+                        <Grid key={index} item xs={12} lg={4}>
                               <Animate type="fade" delay={(index + 1) / 3}>
                                     <MPaper >
                                           <Stack direction="row" alignItems="center" justifyContent="space-between">

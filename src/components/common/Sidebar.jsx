@@ -9,7 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
 
 import { Box, Drawer, Hidden, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Paper, Typography, colors } from '@mui/material';
-import { images } from "./assets";
+import { images } from "../../assets";
 import Animate from "./Animate";
 import React from 'react';
 
