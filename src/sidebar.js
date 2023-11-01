@@ -8,12 +8,10 @@ import HelpIcon from '@mui/icons-material/Help';
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
 
-// import {  Menu, MenuItem, useProSidebar } from "react-pro-sidebar";
 import { Box, Drawer, Hidden, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Paper, Typography, colors } from '@mui/material';
 import { images } from "./assets";
 import Animate from "./Animate";
-import React, { useState } from 'react';
-import useMediaQuery from '@mui/material/useMediaQuery';
+import React from 'react';
 
 
 const menus = [
