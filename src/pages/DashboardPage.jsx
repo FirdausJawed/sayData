@@ -1,5 +1,6 @@
 import { Grid,Typography } from '@mui/material';
 import React from 'react';
+import DataTable from '../components/common/DataTable';
 import SummaryGrid from '../components/common/SummaryGrid';
 import SearchAppBar from '../components/common/searchbar';
 import Button from '@mui/material/Button';
@@ -22,6 +23,9 @@ const DashboardPage = () => {
      </Grid>
       <Grid item xs={12}>
         <SummaryGrid />
+      </Grid>
+      <Grid item xs={12}>
+        <DataTable />
       </Grid>
     </Grid>
   );
